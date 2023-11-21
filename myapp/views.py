@@ -14,7 +14,7 @@ def login_auth(request):
         print(username, password) 
 
         #Hard-coded username and password for demonstration purposes
-        if username == 'user' and password == '1234':
+        if username == 'gourisrinijag' and password == 'Thelibrarypassword':
             return HttpResponseRedirect('/home/')
 
     #return messages.add_message(request, messages.INFO, 'Authentication failed. Please try again.')        
