@@ -13,7 +13,7 @@ def login_auth(request):
         # Hard-coded username and password for demonstration purposes
         if username == 'user' and password == '1234':
             return HttpResponseRedirect('/home/')
-    
+            
     return HttpResponse("Authentication failed. Please try again.")
 
 def authenticated(request):
