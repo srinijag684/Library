@@ -51,7 +51,7 @@
 
                 <li>
                     <a href = "#">
-                        Search
+                        Account
                     </a>
                 </li>
 
@@ -68,11 +68,13 @@
                 </li> 
             </ul>
         </nav>  
+
     </body>
 
     <script>
+        //takes in the name of cookie, value to be stored in the cookie,
+        //number of days for cookie to expire
         function setCookie(cookieName, cookieValue, expirationDays){
-            //takes in the name of cookie, value to be stored in the cookie, number of days for cookie to expire
             const d = new Date(); //create a date object
             d.setTime(d.getTime() + (expirationDays * 24 * 60 * 60 * 1000)); // calculate expiration time
             const expires = "expires = " + d.toUTCString(); // convert to UTC format
@@ -86,7 +88,8 @@
             const decodedCookie = decodeURIComponent(document.cookie);
             //splits cookie string into an array individual cookies
             const cookieArray = decodedCookie.split(';');
-            //iterates through the array of cookies, trims any leading spaces, and checks if the 
+            //iterates through the array of cookies, trims 
+            //any leading spaces, and checks if the 
             //current cookie starts with the desired 'name'.
             //If found, it returns the value of the cookie
             for (let i = 0; i < cookieArray.length; i++){
