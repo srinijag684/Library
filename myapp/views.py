@@ -22,3 +22,11 @@ def login_auth(request):
 
 def authenticated(request):
     return render(request, 'myapp/home.html')
+
+def my_view(request):
+    response = HttpResponse()
+    response.set_cookie('username', 'John Doe', max_age = 30 * 24* 60 * 60) #30 Days
+
+    username = request.COOKIES.get('username', 'default_value_if_not_found')
+
+    return response
