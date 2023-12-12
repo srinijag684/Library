@@ -9,9 +9,64 @@
         body{
             background-color: #e7e6e1;
         }
+
+        body nav{
+            position: sticky;
+            top: 0;
+        }
+
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            box-sizing: border-box;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .home{
+           position: absolute;
+           right: 90%;
+
+        }
+
+        li{
+            list-style: none;
+            margin-right: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        li a{
+            text-decoration: none;
+            color: #1ac;
+        }
+
+        h2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            color: #1ac;
+        }
+
     </style>
     <body>
-        <p>Hello, welcome to your library!</p>  
+        <nav>
+            <ul>
+                <li class = "home">
+                    <a href = "#">
+                        Home
+                    </a>
+                </li>
+
+                <li><a href = "#">Search</a></li>
+                <li><a href = "#">Login</a></li>
+                <li><a href = "#">Setting</a></li>
+                
+            </ul>
+        </nav>
+        <h2>Home</h2>
     </body>
     <script>
         function setCookie(cookieName, cookieValue, expirationDays){
