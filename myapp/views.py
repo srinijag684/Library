@@ -1,27 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
+from django.contrib import auth
+
 
 # Create your views here.
-def main(request):
-    return render(request, 'myapp/index.html')
+'''def main(request):
+    return render(request, 'myapp/index.html')'''
 
 def login(request):
     if request.user.is_authenticated:
-        return HttpResponseRedirect('/main/')
+        return HttpResponseRedirect('/home/')
     
-    return render(request,'login.html',locals())
+    return render(request,'myapp/index.html')
 
 def login_auth(request):
+
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/home/')
+
+    '''
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('password')
+        password = request.POST.get('password')'''
+    
+    username = request.POST.get('username', 'N')
+    password = request.POST.get('password', '')
 
-        #print(username, password) 
+    #print(username, password) 
 
-        #Hard-coded username and password for demonstration purposes
-        if username == 'gourisrinijag' and password == 'Thelibrarypassword':
-            return HttpResponseRedirect('/home/')
+    #Hard-coded username and password for demonstration purposes
+    if username == 'gourisrinijag' and password == 'Thelibrarypassword':
+        return HttpResponseRedirect('/home/')
 
     #return messages.add_message(request, messages.INFO, 'Authentication failed. Please try again.')        
     return HttpResponse("Authentication failed. Please try again.")
