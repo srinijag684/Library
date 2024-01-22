@@ -3,15 +3,21 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 
 # Create your views here.
-def login(request):
+def main(request):
     return render(request, 'myapp/index.html')
+
+def login(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/main/')
+    
+    return render(request,'login.html',locals())
 
 def login_auth(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        print(username, password) 
+        #print(username, password) 
 
         #Hard-coded username and password for demonstration purposes
         if username == 'gourisrinijag' and password == 'Thelibrarypassword':
