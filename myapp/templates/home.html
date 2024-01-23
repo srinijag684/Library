@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,59 +10,72 @@
         <title>Home</title>
     </head>
 
-    <style>
-        body{
-            background-color: #e7e6e1;
-        }
-
-        body nav{
-            position: sticky;
-            top: 0;
-        }
-
-        ul{
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            box-sizing: border-box;
-            padding: 20px;
-            background: #fff;
-        }
-
-        li{
-            list-style: none;
-            margin-right: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        li a{
-            text-decoration: none;
-            color: black;
-        }
-
-    </style>
-
+    
     <body>
-        <nav>
-            <ul>
-                <li>
-                    <a href = "#">Home</a>
-                </li>
+        
+        
 
-                <li>
-                    <a href = "#">Account</a>
-                </li>
+        {% block content %}
+        {% if user.is_authenticated %}
+        <style>
+            body{
+                background-color: #e7e6e1;
+            }
+    
+            body nav{
+                position: sticky;
+                top: 0;
+            }
+    
+            ul{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                box-sizing: border-box;
+                padding: 20px;
+                background: #fff;
+            }
+    
+            li{
+                list-style: none;
+                margin-right: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+    
+            li a{
+                text-decoration: none;
+                color: black;
+            }
+    
+        </style>
+    
+            <nav>
+                <ul>
+                    <li>
+                        <a href = "#">Home</a>
+                    </li>
 
-                <li>
-                    <a href = "#">Settings</a>
-                </li>
+                    <li>
+                        <a href = "#">Account</a>
+                    </li>
 
-                <li>
-                    <a href = "#">Logout</a>
-                </li> 
-            </ul>
-        </nav>  
+                    <li>
+                        <a href = "#">Settings</a>
+                    </li>
+
+                    <li>
+                        <a href = "{% url 'logout' %}">Logout</a>
+                    </li> 
+                </ul>
+            </nav>  
+            Hi {{ user.username }}!
+            <!--<p><a href="">Log Out</a></p>-->
+        {% else %}
+           <!-- <p>You are not logged in</p>
+            <a href="{% url 'login' %}">Log In</a>-->
+        {% endif %}
+        {% endblock %}
 
     </body>
 

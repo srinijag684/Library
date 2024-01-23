@@ -1,9 +1,8 @@
-from django.urls import path
-from .views import login_auth, login ,authenticated  #, main, 
+from django.contrib import admin
+from django.urls import path, include 
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    #path('main/', main, name = 'main'),
-    path('login/', login, name='login_page'),
-    path('authenticate/', login_auth, name='login_auth'),
-    path('home/', authenticated, name ='home'), 
+    path("accounts/", include("django.contrib.auth.urls")),  
+    path("", TemplateView.as_view(template_name="home.html"), name="home"),
 ]
