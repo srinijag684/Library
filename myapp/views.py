@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
 from django.contrib import auth
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -11,6 +9,30 @@ from django.contrib import auth
 def home(request):
     return render(request, "home.html")
 
+def login(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/home/')
+    return render(request,'login.html',locals())
+
+def loginSubmit(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/home/')
+    
+    username = request.POST.get('username','N')
+    password = request.POST.get('password', '')
+
+    user = auth.authenticate(username=username, password=password)
+
+    if user is not None and user.is_active:
+        auth.login(request, user)
+        return HttpResponseRedirect('/home/')
+    else:
+        return render(request,'login.html',locals())
+        
+def logout(request):
+    print("logout")
+    auth.logout(request)
+    return redirect(login)
 
 
 
