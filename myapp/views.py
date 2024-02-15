@@ -12,7 +12,7 @@ def home(request):
 def login(request):
     if request.user.is_authenticated:
         return HttpResponseRedirect('/home/')
-    return render(request,'login.html',locals())
+    return render(request,'/Users/gourisrinijag/theLibrary/myapp/templates/registration/login.html')
 
 def loginSubmit(request):
     if request.user.is_authenticated:
@@ -27,10 +27,9 @@ def loginSubmit(request):
         auth.login(request, user)
         return HttpResponseRedirect('/home/')
     else:
-        return render(request,'login.html',locals())
+        return render(request,'templates/registration/login.html')
         
 def logout(request):
-    print("logout")
     auth.logout(request)
     return redirect(login)
 
