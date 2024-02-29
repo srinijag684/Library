@@ -10,6 +10,7 @@ def home(request):
     return render(request, "home.html")
 
 def login(request):
+    print('login function')
     if request.user.is_authenticated:
         return HttpResponseRedirect('/home/')
     return render(request,'/Users/gourisrinijag/theLibrary/myapp/templates/registration/login.html')

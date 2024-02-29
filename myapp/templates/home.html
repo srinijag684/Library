@@ -1,4 +1,3 @@
-{% extends "base.html" %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +14,7 @@
         
         
 
-        {% block content %}
-        {% if user.is_authenticated %}
+  
         <style>
             body{
                 background-color: #e7e6e1;
@@ -70,13 +68,10 @@
                 </ul>
             </nav>  
             Hi {{ user.username }}!
-            <!--<p><a href="">Log Out</a></p>-->
-        {% else %}
-           <!-- <p>You are not logged in</p>
-            <a href="{% url 'login' %}">Log In</a>-->
-        {% endif %}
-        {% endblock %}
-
+            <div>
+                
+            </div>
+    
     </body>
 
     <script>
