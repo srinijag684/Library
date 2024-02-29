@@ -45,6 +45,19 @@
                 text-decoration: none;
                 color: black;
             }
+
+            .title{
+                position: absolute;
+                left: 50%;
+                top: 10%;
+                transform: translate(-50%, -50%);
+            }
+
+            .container {
+                border: 1px solid #fff;
+                padding: 10px;
+                margin: 10px;
+            }
     
         </style>
     
@@ -67,9 +80,12 @@
                     </li> 
                 </ul>
             </nav>  
-            Hi {{ user.username }}!
-            <div>
-                
+            <div class = "title"> 
+                <h1>Hi {{ user.username }}! </h1>
+
+            </div class = "container">
+                <h1>This is my content</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, commodo quis tellus nec, consequat egestas magna. Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique massa, et accumsan nisi velit in enim.</p>
             </div>
     
     </body>
