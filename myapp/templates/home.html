@@ -5,16 +5,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<link rel="stylesheet" href="../../templates/myapp/styles.css">-->
         <title>Home</title>
     </head>
 
     
     <body>
-        
-        
-
-  
         <style>
             body{
                 background-color: #e7e6e1;
@@ -61,32 +56,32 @@
     
         </style>
     
-            <nav>
-                <ul>
-                    <li>
-                        <a href = "#">Home</a>
-                    </li>
+        <nav>
+            <ul>
+                <li>
+                    <a href = "#" >Home</a>
+                </li>
 
-                    <li>
-                        <a href = "#">Account</a>
-                    </li>
+                <li>
+                    <a href = "{% url 'account' %}">Account</a>
+                </li>
 
-                    <li>
-                        <a href = "#">Settings</a>
-                    </li>
+                <li>
+                    <a href = "{% url 'settings' %}">Settings</a>
+                </li>
 
-                    <li>
-                        <a href = "{% url 'logout' %}">Logout</a>
-                    </li> 
-                </ul>
-            </nav>  
-            <div class = "title"> 
-                <h1>Hi {{ user.username }}! </h1>
+                <li>
+                    <a href = "{% url 'logout' %}">Logout</a>
+                </li> 
+            </ul>
+        </nav>  
+        <div class = "title"> 
+            <h1>Hi {{ user.username }}! </h1>
 
-            </div class = "container">
-                <h1>This is my content</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, commodo quis tellus nec, consequat egestas magna. Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique massa, et accumsan nisi velit in enim.</p>
-            </div>
+        </div class = "container">
+            <h1>This is my content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, commodo quis tellus nec, consequat egestas magna. Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique massa, et accumsan nisi velit in enim.</p>
+        </div>
     
     </body>
 

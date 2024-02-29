@@ -8,5 +8,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('submit/', views.loginSubmit, name ='authenticate' ),
     path('logout/', views.logout, name='logout'),
+    path('account/', views.account, name='account'),
+    path('settings/', views.settings, name='settings'),
     path('admin/', admin.site.urls),
 ]

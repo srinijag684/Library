@@ -34,7 +34,13 @@ def logout(request):
     auth.logout(request)
     return redirect(login)
 
+@login_required
+def account(request):
+    return render(request, "account.html")
 
+@login_required
+def settings(request):
+    return render(request, "settings.html")
 
 def my_view(request):
     response = HttpResponse()
