@@ -49,9 +49,38 @@
             }
 
             .container {
-                border: 1px solid #fff;
-                padding: 10px;
-                margin: 10px;
+                position: relative;
+                width: 1200px;
+                height: 300px;
+                margin: 240px auto;
+            }
+
+            .container .box{
+                position: relative;
+                width: 370px;
+                height: 370px;
+                background: #fff;
+                float: left;
+                margin: 15px;
+                box-sizing: border-box;
+                overflow: auto;
+                border-radius: 10px;
+            }
+
+            .container .box .content{
+                position: absolute;
+                top: 100%;
+                height: calc(100% - 100px);
+                text-align: center;
+                padding: 20px;
+                box-sizing: border-box;
+                transition: 0.5s;
+                opacity: 0;
+            }
+
+            .container .box:hover  .content{
+                top: 100px;
+                opacity: 1;
             }
     
         </style>
@@ -77,10 +106,42 @@
         </nav>  
         <div class = "title"> 
             <h1>Hi {{ user.username }}! </h1>
+        </div>
 
-        </div class = "container">
-            <h1>This is my content</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, commodo quis tellus nec, consequat egestas magna. Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique massa, et accumsan nisi velit in enim.</p>
+        <div class = "container">
+            <div class="box">
+                <div class="content">
+                    <h3>Book 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                    Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                    massa, et accumsan nisi velit in enim.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "container">
+            <div class="box">
+                <div class="content">
+                    <h3>Book 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                    Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                    massa, et accumsan nisi velit in enim.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "container">
+            <div class="box">
+                <div class="content">
+                    <h3>Book 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                    Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                    massa, et accumsan nisi velit in enim.</p>
+                </div>
+            </div>
         </div>
     
     </body>
