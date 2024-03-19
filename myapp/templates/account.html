@@ -10,9 +10,86 @@
             body{
                 background-color: #e7e6e1;
             }   
+
+            .nav-bar nav{
+                position: sticky;
+                top: 0;
+            }
+    
+            .nav-bar ul{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                box-sizing: border-box;
+                padding: 20px;
+                background: #fff;
+            }
+    
+            .nav-bar li{
+                list-style: none;
+                margin-right: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+    
+            .nav-bar li a{
+                text-decoration: none;
+                color: black;
+            }
+
+        
+            .box {
+                width: 90%;
+                height: fit-content;
+                border: 1px solid black;
+                padding: 10px;
+                margin: 10px;
+            }
+
+
         </style>
 
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href = "{% url 'home' %}" >Home</a>
+                </li>
+
+                <li>
+                    <a href = "{% url 'account' %}">Account</a>
+                </li>
+
+                <li>
+                    <a href = "{% url 'settings' %}">Settings</a>
+                </li>
+
+                <li>
+                    <a href = "{% url 'logout' %}">Logout</a>
+                </li> 
+            </ul>
+        </nav> 
+
         <h1>Account</h1>
+
+        <div class="box">
+            <h2>TBR</h2>
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+                <li>List Item 4</li>
+                <li>List Item 5</li>
+                </ul>
+        </div>
+
+        <div class="box">
+            <h2>Read List</h2>
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+                </ul>
+        </div>
 
     </body>
 </html>
