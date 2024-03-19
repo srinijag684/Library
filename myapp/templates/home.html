@@ -48,11 +48,16 @@
                 transform: translate(-50%, -50%);
             }
 
+            .grid-container{
+                display: grid;
+                grid-template-columns: auto auto auto;
+                padding: 25px;
+            }
+
             .container {
                 position: flex ;
-                width: 1200px;
-                height: 300px;
-                margin: 240px auto;
+                margin: auto;
+                margin-top: 5%;
             }
 
             .container .box{
@@ -82,7 +87,32 @@
                 top: 100px;
                 opacity: 1;
             }
-    
+
+            .pagination{
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                bottom: auto;
+                transform: translate(-50%, -50%);
+                font-size: larger;
+            }
+
+            .pagination a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                transition: background-color .3s;
+            }
+
+            .pagination a.active {
+                background-color: dodgerblue;
+                color: white;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+
         </style>
     
         <nav>
@@ -108,42 +138,91 @@
             <h1>Hi {{ user.username }}! </h1>
         </div>
 
-        <div class = "container">
-            <div class="box">
-                <div class="content">
-                    <h3>Book 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
-                    Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
-                    massa, et accumsan nisi velit in enim.</p>
+        <div class="grid-container">
+            <div class = "container">
+                <div class="box">
+                    <div class="content">
+                        <h3>Book 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                        Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                        massa, et accumsan nisi velit in enim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "container">
+                <div class="box">
+                    <div class="content">
+                        <h3>Book 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                        Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                        massa, et accumsan nisi velit in enim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "container">
+                <div class="box">
+                    <div class="content">
+                        <h3>Book 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                        Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                        massa, et accumsan nisi velit in enim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "container">
+                <div class="box">
+                    <div class="content">
+                        <h3>Book 4</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                        Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                        massa, et accumsan nisi velit in enim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "container">
+                <div class="box">
+                    <div class="content">
+                        <h3>Book 5</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                        Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                        massa, et accumsan nisi velit in enim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "container">
+                <div class="box">
+                    <div class="content">
+                        <h3>Book 6</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
+                        Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
+                        massa, et accumsan nisi velit in enim.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class = "container">
-            <div class="box">
-                <div class="content">
-                    <h3>Book 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
-                    Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
-                    massa, et accumsan nisi velit in enim.</p>
-                </div>
-            </div>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a class="active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
         </div>
 
-        <div class = "container">
-            <div class="box">
-                <div class="content">
-                    <h3>Book 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Sed neque dolor, commodo quis tellus nec, consequat egestas magna. 
-                    Donec vestibulum, arcu vitae fermentum efficitur, leo ipsum tristique
-                    massa, et accumsan nisi velit in enim.</p>
-                </div>
-            </div>
-        </div>
-    
     </body>
 
     <script>
