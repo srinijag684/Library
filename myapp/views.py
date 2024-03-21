@@ -49,3 +49,7 @@ def my_view(request):
     username = request.COOKIES.get('username', 'default_value_if_not_found')
 
     return response
+
+def register(request):
+    return render(request, "register.html")
+
